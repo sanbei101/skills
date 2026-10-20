@@ -202,7 +202,10 @@ scancel <JOBID>
 | :--- | :--- |
 | **远端(登录/计算节点)** | 只做计算,只产出**结构化数据**:`metrics.jsonl`、`results.csv`、`preds.npz`、`*.parquet` |
 | **本地(个人机器)** | 通过 `rsync` 拉取上述数据后,在**本地临时环境**执行绘图与文档生成 |
-也不要在 `pyproject.toml` 中新增画图等依赖,直接uv --with 临时执行即可
+也不要在 `pyproject.toml` 中新增画图等依赖,直接uv --with 临时执行
+
+
+## 4. 本地直连计算节点 (ProxyJump 配置)
 
 避免每次繁琐地"先连登录节点、再查节点、再跳登录",在本地 `~/.ssh/config` 中配置通配跳转:
 
